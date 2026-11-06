@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "US Visa Portal Auto-Fill Assistant",
+  "version": "1.0",
+  "description": "Automatically auto-fills credentials and signs in directly on the official usvisascheduling.com and atlasauth portals.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://atlasauth.b2clogin.com/*",
+    "https://www.usvisascheduling.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://atlasauth.b2clogin.com/*",
+        "https://www.usvisascheduling.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
